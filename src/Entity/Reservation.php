@@ -40,6 +40,12 @@ class Reservation
     #[ORM\ManyToMany(targetEntity: Table::class, inversedBy: 'reservations')]
     private Collection $noTable;
 
+    #[ORM\Column(length: 150)]
+    private ?string $name = null;
+
+    #[ORM\Column(length: 180)]
+    private ?string $email = null;
+
     public function __construct()
     {
         $this->allergy = new ArrayCollection();
@@ -167,6 +173,30 @@ class Reservation
     public function removeNoTable(Table $noTable): self
     {
         $this->noTable->removeElement($noTable);
+
+        return $this;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): self
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): self
+    {
+        $this->email = $email;
 
         return $this;
     }

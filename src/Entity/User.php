@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -51,6 +53,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(nullable: true)]
     private ?bool $isActive = null;
+
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Reservation::class)]
+    private Collection $reservations;
+
+    #[ORM\ManyToMany(targetEntity: Allergy::class, inversedBy: 'users')]
+    private Collection $allergy;
+
+    public function __construct()
+    {
+        $this->reservations = new ArrayCollection();
+        $this->allergy = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -214,6 +228,60 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setIsActive(?bool $isActive): self
     {
         $this->isActive = $isActive;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Reservation>
+     */
+    public function getReservations(): Collection
+    {
+        return $this->reservations;
+    }
+
+    public function addReservation(Reservation $reservation): self
+    {
+        if (!$this->reservations->contains($reservation)) {
+            $this->reservations->add($reservation);
+            $reservation->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReservation(Reservation $reservation): self
+    {
+        if ($this->reservations->removeElement($reservation)) {
+            // set the owning side to null (unless already changed)
+            if ($reservation->getUser() === $this) {
+                $reservation->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Allergy>
+     */
+    public function getAllergy(): Collection
+    {
+        return $this->allergy;
+    }
+
+    public function addAllergy(Allergy $allergy): self
+    {
+        if (!$this->allergy->contains($allergy)) {
+            $this->allergy->add($allergy);
+        }
+
+        return $this;
+    }
+
+    public function removeAllergy(Allergy $allergy): self
+    {
+        $this->allergy->removeElement($allergy);
 
         return $this;
     }

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\MenuFormulaRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -28,6 +30,14 @@ class MenuFormula
 
     #[ORM\Column(nullable: true)]
     private ?bool $isMenu = null;
+
+    #[ORM\ManyToMany(targetEntity: Product::class, inversedBy: 'menuFormulas')]
+    private Collection $product;
+
+    public function __construct()
+    {
+        $this->product = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -90,6 +100,30 @@ class MenuFormula
     public function setIsMenu(?bool $isMenu): self
     {
         $this->isMenu = $isMenu;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Product>
+     */
+    public function getProduct(): Collection
+    {
+        return $this->product;
+    }
+
+    public function addProduct(Product $product): self
+    {
+        if (!$this->product->contains($product)) {
+            $this->product->add($product);
+        }
+
+        return $this;
+    }
+
+    public function removeProduct(Product $product): self
+    {
+        $this->product->removeElement($product);
 
         return $this;
     }

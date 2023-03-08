@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\TableRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -23,6 +25,18 @@ class Table
 
     #[ORM\Column(type: Types::SMALLINT)]
     private ?int $qtyMax = null;
+
+    #[ORM\ManyToMany(targetEntity: Reservation::class, mappedBy: 'noTable')]
+    private Collection $reservations;
+
+    #[ORM\ManyToOne(inversedBy: 'tables')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Room $room = null;
+
+    public function __construct()
+    {
+        $this->reservations = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -61,6 +75,45 @@ class Table
     public function setQtyMax(int $qtyMax): self
     {
         $this->qtyMax = $qtyMax;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Reservation>
+     */
+    public function getReservations(): Collection
+    {
+        return $this->reservations;
+    }
+
+    public function addReservation(Reservation $reservation): self
+    {
+        if (!$this->reservations->contains($reservation)) {
+            $this->reservations->add($reservation);
+            $reservation->addNoTable($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReservation(Reservation $reservation): self
+    {
+        if ($this->reservations->removeElement($reservation)) {
+            $reservation->removeNoTable($this);
+        }
+
+        return $this;
+    }
+
+    public function getRoom(): ?Room
+    {
+        return $this->room;
+    }
+
+    public function setRoom(?Room $room): self
+    {
+        $this->room = $room;
 
         return $this;
     }

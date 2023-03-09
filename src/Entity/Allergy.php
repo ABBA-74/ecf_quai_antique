@@ -25,13 +25,13 @@ class Allergy
     private Collection $reservations;
 
     #[ORM\ManyToMany(targetEntity: Product::class, inversedBy: 'allergies')]
-    private Collection $product;
+    private Collection $products;
 
     public function __construct()
     {
         $this->users = new ArrayCollection();
         $this->reservations = new ArrayCollection();
-        $this->product = new ArrayCollection();
+        $this->products = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -108,15 +108,15 @@ class Allergy
     /**
      * @return Collection<int, Product>
      */
-    public function getProduct(): Collection
+    public function getProducts(): Collection
     {
-        return $this->product;
+        return $this->products;
     }
 
     public function addProduct(Product $product): self
     {
-        if (!$this->product->contains($product)) {
-            $this->product->add($product);
+        if (!$this->products->contains($product)) {
+            $this->products->add($product);
         }
 
         return $this;
@@ -124,7 +124,7 @@ class Allergy
 
     public function removeProduct(Product $product): self
     {
-        $this->product->removeElement($product);
+        $this->products->removeElement($product);
 
         return $this;
     }

@@ -79,7 +79,7 @@ class Product
         return $this;
     }
 
-    public function isIsFavorite(): ?bool
+    public function getIsFavorite(): ?bool
     {
         return $this->isFavorite;
     }

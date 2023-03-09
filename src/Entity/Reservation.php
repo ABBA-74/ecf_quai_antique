@@ -105,7 +105,7 @@ class Reservation
         return $this;
     }
 
-    public function isIsConfirmed(): ?bool
+    public function getIsConfirmed(): ?bool
     {
         return $this->isConfirmed;
     }

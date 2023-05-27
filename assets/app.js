@@ -11,3 +11,11 @@ import './styles/scss/style.scss';
 
 // start the Stimulus application
 import './bootstrap';
+
+// $(document).ready(function () {
+//   $('[data-toggle="popover"]').popover();
+// });
+
+// const $ = require('jquery');
+// window.bootstrap = require('bootstrap');
+require('bootstrap');

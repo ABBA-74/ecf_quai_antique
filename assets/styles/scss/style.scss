@@ -1,6 +1,5 @@
-$color: rgb(204, 0, 255);
-
-body {
-  background-color: $color;
-  font-size: clamp(1rem, 7vw, 3rem);
-}
+@forward 'base';
+@forward 'abstracts';
+@forward 'components';
+@forward 'layouts';
+@forward 'pages';

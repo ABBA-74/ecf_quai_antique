@@ -1,0 +1,92 @@
+@use './../base/colors' as clr;
+
+nav {
+  width: 100%;
+  overflow: hidden;
+  min-height: 90px;
+  background: linear-gradient(
+    90.4deg,
+    #0e1815e1 0%,
+    rgba(80, 36, 25, 0.897) 100%
+  );
+  box-shadow: 0px 8px 6px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(12px);
+
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    img {
+      height: 90px;
+      width: auto;
+      shape-rendering: auto;
+      margin-right: 1rem;
+      filter: drop-shadow(0 6px 6px rgb(0, 0, 0));
+    }
+    span {
+      font-size: 2.5rem;
+      font-family: 'Lavenda';
+      color: clr.$clr-primary;
+      text-shadow: 0 3px 3px rgb(0, 0, 0);
+    }
+  }
+  .nav-item {
+    position: relative;
+    min-width: 14ch;
+  }
+
+  .navbar-nav .nav-link {
+    position: relative;
+    z-index: 1;
+    font-size: 1.2rem;
+    color: #937e7b;
+    text-shadow: (0px 3px 3px rgba(0, 0, 0, 0.5));
+  }
+  .navbar-nav .nav-link:hover,
+  .navbar-nav .nav-link:focus,
+  .navbar-nav .nav-link.active {
+    color: clr.$clr-light;
+  }
+
+  @media screen and (min-width: 991px) {
+    .nav-item .nav-link.active::after {
+      content: '';
+      position: absolute;
+      height: 120px;
+      left: -2rem;
+      top: -2.5rem;
+
+      width: 0;
+      height: 0;
+      border-left: 3rem solid transparent;
+      border-right: 3rem solid transparent;
+      border-bottom: 9rem solid rgba(149, 149, 149, 0.276);
+      filter: drop-shadow(3px 0px 4px rgba(0, 0, 0, 0.75));
+      z-index: -1;
+    }
+    .nav-item .nav-link.active::before {
+      content: '';
+      position: absolute;
+      height: 120px;
+      left: 1.5rem;
+      top: -4rem;
+
+      width: 0;
+      height: 0;
+      border-left: 3rem solid transparent;
+      border-right: 3rem solid transparent;
+      border-top: 9rem solid rgba(149, 149, 149, 0.276);
+      filter: drop-shadow(3px 0px 4px rgba(0, 0, 0, 0.75));
+      z-index: -1;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    .navbar-brand {
+      img {
+        margin-right: 2rem;
+      }
+      span {
+        font-size: 3.5rem;
+      }
+    }
+  }
+}

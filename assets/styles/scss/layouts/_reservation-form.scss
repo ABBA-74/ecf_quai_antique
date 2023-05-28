@@ -3,10 +3,13 @@
 .section-reservation {
   background: clr.$clr-dark-gray;
   form {
+    position: relative;
+    z-index: 5;
     background: clr.$clr-dark-gray;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-      rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
-      rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    // box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    //   rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    //   rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    box-shadow: rgba(0, 0, 0, 0.73) 0px 22px 70px 4px;
     border-radius: 0.5rem;
     padding-inline: 2rem;
     padding-top: 3rem;
@@ -21,6 +24,8 @@
       border-radius: 0.5rem;
       label {
         color: clr.$clr-light;
+        width: 100%;
+        text-align: center;
       }
     }
     button[type='submit'] {

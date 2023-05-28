@@ -1,0 +1,17 @@
+@use './colors' as clr;
+
+.bg-clr-dark {
+  background-color: clr.$clr-dark-gray;
+}
+.bg-clr-secondary {
+  background-color: clr.$clr-secondary;
+}
+.txt-clr-light {
+  color: clr.$clr-light;
+}
+.txt-clr-primary {
+  color: clr.$clr-primary;
+}
+.txt-clr-secondary {
+  color: clr.$clr-secondary;
+}

@@ -11,42 +11,70 @@
 		</div>
 	</header>
 	<main>
-		<section class="section-reservation">
+		{% include "./_partials/_reservation-form.html.twig" %}
+		<section class="section-presentation">
 			<div class="container">
-				<form action="">
-					<div class="row d-flex mb-3">
-						<div class="col-12 col-lg-6 col-xl-3 mb-3">
-							<div class="reservation-wrapper">
-								<label for="dateReservation" class="form-label">Date de réservation</label>
-								<input type="date" class="form-control" id="dateReservation">
+				<div class="row py-5">
+					<h2 class="text-center txt-clr-primary">Le Quai Antique un restaurant incontournable</h2>
+					<img class="img-separator my-2" src="{{ asset('./build/images/separator.svg')}}" alt="illustration separator">
+					<p class="txt-clr-light text-center mx-auto w-75">Venez découvrir notre cuisine savoyarde authentique, élaborée à partir de produits locaux de qualité par le chef cuisinier M. Michaud, dans une ambiance chaleureuse et conviviale.</p>
+				</div>
+				<div class="row d-flex">
+					<div class="presentation-content">
+						<div class="presentation-option-wrapper option-picture">
+							<div class="wrapper-img">
+								<img src="{{ asset('./build/images/chef-michaud.webp')}}" alt="">
 							</div>
 						</div>
-						<div class="col-12 col-lg-6 col-xl-3 mb-3">
-							<div class="reservation-wrapper">
-								<label for="hour" class="form-label">Heure d'arrivée</label>
-								<input type="hour" class="form-control" id="hourReservation">
-							</div>
+						<div class="presentation-option-wrapper option-quality">
+							<img src="{{ asset('./build/images/icon-opt-quality.svg')}}" alt="">
+							<h3 class="h5 text-center txt-clr-primary">
+								La qualité de la nourriture
+							</h3>
+							<p class="txt-clr-light">
+								Nous utilisons des ingrédients locaux et régionaux tels que le fromage, la charcuterie, les pommes de terre et les champignons
+							</p>
 						</div>
-						<div class="col-12 col-lg-6 col-xl-3 mb-3">
-							<div class="reservation-wrapper">
-								<label for="qtyGuest" class="form-label">Nombre de couverts</label>
-								<input type="number" class="form-control" id="qtyGuest">
-							</div>
+						<div class="presentation-option-wrapper option-environment">
+							<img src="{{ asset('./build/images/icon-opt-environment.svg')}}" alt="">
+							<h3 class="h5 text-center txt-clr-primary">
+								L'ambiance chaleureuse
+							</h3>
+							<p class="txt-clr-light">
+								Nous vous offrons une atmosphère conviviale et chaleureuse, avec des décorations rustiques et des feux de cheminée.
+							</p>
 						</div>
-						<div class="col-12 col-lg-6 col-xl-3 mb-3">
-							<div class="reservation-wrapper">
-								<label for="allergies" class="form-label">Allergies</label>
-								<input type="text" class="form-control" id="allergies">
-							</div>
+						<div class="presentation-option-wrapper option-service">
+							<img src="{{ asset('./build/images/icon-opt-service.svg')}}" alt="">
+							<h3 class="h5 text-center txt-clr-primary">
+								Le service
+							</h3>
+							<p class="txt-clr-light">
+								Nous disposons d'un personnel qualifié et attentif qui saura répondre à toutes vos questions concernant la composition des plats.
+							</p>
 						</div>
-					</div>
-					<div class="row mb-3">
-						<div class="col d-flex justify-content-center">
-							<button type="submit" class="btn btn-bg-primary">Reservez</button>
+						<div class="presentation-option-wrapper option-location">
+							<img src="{{ asset('./build/images/icon-opt-location.svg')}}" alt="">
+							<h3 class="h5 text-center txt-clr-primary">
+								La localisation
+							</h3>
+							<p class="txt-clr-light">
+								Venez découvrir notre restaurant à Chambéry, célèbre pour ses armoiries de patronage et son style baroque bien ancré dans la région.
+							</p>
 						</div>
+						<div class="presentation-option-wrapper option-specialities">
+							<img src="{{ asset('./build/images/icon-opt-specialities.svg')}}" alt="">
+							<h3 class="h5 text-center txt-clr-primary">
+								Les spécialités
+							</h3>
+							<p class="txt-clr-light">
+								Nous vous proposons des spécialités uniques telles que la fondue, la raclette ou la tartiflette.
+							</p>
+						</div>
+
 					</div>
 				</div>
-			</form>
+			</div>
 		</section>
 	</main>
 {% endblock %}

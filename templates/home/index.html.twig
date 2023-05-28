@@ -12,66 +12,28 @@
 	</header>
 	<main>
 		{% include "./_partials/_reservation-form.html.twig" %}
-		<section class="section-presentation">
+		{% include "./home/_section-presentation.html.twig" %}
+		<section class="section-preview-dishes py-5">
 			<div class="container">
 				<div class="row py-5">
-					<h2 class="text-center txt-clr-primary">Le Quai Antique un restaurant incontournable</h2>
+					<h2 class="text-center txt-clr-primary">Les plats les plus savoureux de notre cuisinier</h2>
 					<img class="img-separator my-2" src="{{ asset('./build/images/separator.svg')}}" alt="illustration separator">
-					<p class="txt-clr-light text-center mx-auto w-75">Venez découvrir notre cuisine savoyarde authentique, élaborée à partir de produits locaux de qualité par le chef cuisinier M. Michaud, dans une ambiance chaleureuse et conviviale.</p>
 				</div>
-				<div class="row d-flex">
-					<div class="presentation-content">
-						<div class="presentation-option-wrapper option-picture">
-							<div class="wrapper-img">
-								<img src="{{ asset('./build/images/chef-michaud.webp')}}" alt="">
+				<div class="row">
+					<div class="preview-dishes-grid d-flex  flex-wrap">
+						{% for i in 0..11 %}
+							<div class="col-12 col-sm-6 col-md-4 col-xl-3 preview-dishes-card">
+								<div class="wrapper-img">
+									<img src="{{ asset('./build/images/dishes-sample.png')}}" alt="">
+								</div>
+								<p>Label</p>
 							</div>
-						</div>
-						<div class="presentation-option-wrapper option-quality">
-							<img src="{{ asset('./build/images/icon-opt-quality.svg')}}" alt="">
-							<h3 class="h5 text-center txt-clr-primary">
-								La qualité de la nourriture
-							</h3>
-							<p class="txt-clr-light">
-								Nous utilisons des ingrédients locaux et régionaux tels que le fromage, la charcuterie, les pommes de terre et les champignons
-							</p>
-						</div>
-						<div class="presentation-option-wrapper option-environment">
-							<img src="{{ asset('./build/images/icon-opt-environment.svg')}}" alt="">
-							<h3 class="h5 text-center txt-clr-primary">
-								L'ambiance chaleureuse
-							</h3>
-							<p class="txt-clr-light">
-								Nous vous offrons une atmosphère conviviale et chaleureuse, avec des décorations rustiques et des feux de cheminée.
-							</p>
-						</div>
-						<div class="presentation-option-wrapper option-service">
-							<img src="{{ asset('./build/images/icon-opt-service.svg')}}" alt="">
-							<h3 class="h5 text-center txt-clr-primary">
-								Le service
-							</h3>
-							<p class="txt-clr-light">
-								Nous disposons d'un personnel qualifié et attentif qui saura répondre à toutes vos questions concernant la composition des plats.
-							</p>
-						</div>
-						<div class="presentation-option-wrapper option-location">
-							<img src="{{ asset('./build/images/icon-opt-location.svg')}}" alt="">
-							<h3 class="h5 text-center txt-clr-primary">
-								La localisation
-							</h3>
-							<p class="txt-clr-light">
-								Venez découvrir notre restaurant à Chambéry, célèbre pour ses armoiries de patronage et son style baroque bien ancré dans la région.
-							</p>
-						</div>
-						<div class="presentation-option-wrapper option-specialities">
-							<img src="{{ asset('./build/images/icon-opt-specialities.svg')}}" alt="">
-							<h3 class="h5 text-center txt-clr-primary">
-								Les spécialités
-							</h3>
-							<p class="txt-clr-light">
-								Nous vous proposons des spécialités uniques telles que la fondue, la raclette ou la tartiflette.
-							</p>
-						</div>
-
+						{% endfor %}
+					</div>
+				</div>
+				<div class="row pb-5">
+					<div class="col d-flex justify-content-center">
+						<button class='btn btn-bg-primary'>Explorer la galerie</button>
 					</div>
 				</div>
 			</div>

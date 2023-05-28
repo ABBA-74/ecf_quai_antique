@@ -1,5 +1,9 @@
 @use './../base/colors' as clr;
 
+img.img-separator {
+  filter: drop-shadow(0 6px 3px rgb(0, 0, 0));
+}
+
 .section-presentation {
   position: relative;
   padding-top: 3rem;
@@ -20,9 +24,7 @@
       rgba(clr.$clr-dark-gray, 0.1)
     );
   }
-  img.img-separator {
-    filter: drop-shadow(0 6px 3px rgb(0, 0, 0));
-  }
+
   .presentation-content {
     display: grid;
     margin-top: 5rem;
@@ -132,5 +134,13 @@
     .option-specialities {
       grid-area: e;
     }
+  }
+}
+
+// SECTION PREVIEW DISHES
+
+.section-preview-dishes {
+  background-color: #212422;
+  .preview-dishes-card img {
   }
 }

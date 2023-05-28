@@ -1,0 +1,18 @@
+@use './../base/colors' as clr;
+
+button.btn {
+  padding-inline: 2rem;
+  border-radius: 0.3rem;
+  text-transform: uppercase;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 19px 38px,
+    rgba(0, 0, 0, 0.52) 0px 15px 12px;
+  &.btn-bg-primary {
+    background-color: clr.$clr-primary;
+    font-weight: 600;
+  }
+  &.btn-bg-primary:hover,
+  &.btn-bg-primary:focus {
+    background-color: rgba(clr.$clr-primary, 0.85);
+    box-shadow: none;
+  }
+}

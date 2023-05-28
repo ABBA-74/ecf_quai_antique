@@ -4,7 +4,8 @@ header {
   position: relative;
   z-index: 1;
   height: 700px;
-  background: url('../../../images/restaurant-room.webp') no-repeat center top;
+  background: clr.$clr-dark-gray url('../../../images/restaurant-room.webp')
+    no-repeat center top;
   object-fit: cover;
   .header-wrapper {
     position: absolute;
@@ -14,7 +15,7 @@ header {
     background-color: rgba(clr.$clr-dark-gray, 0.5);
     box-shadow: rgba(0, 0, 0, 0.76) 0px 22px 70px 4px;
     border-bottom: 2px solid rgba(255, 255, 255, 0.264);
-    max-width: 39rem;
+    max-width: 46rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -23,16 +24,17 @@ header {
     backdrop-filter: blur(12px);
     opacity: 0;
     transform: translateX(-5rem);
-    animation: animHeader 0.45s 2s ease-out forwards;
+    animation: animHeader 0.45s 1s ease-out forwards;
+    text-shadow: 0 3px 3px rgb(0, 0, 0);
     h1 {
       margin-bottom: 1.5rem;
       color: clr.$clr-primary;
       font-size: 3rem;
-      text-shadow: 0 3px 3px rgb(0, 0, 0);
     }
     p {
       color: clr.$clr-light;
       font-size: 1.15rem;
+      font-weight: 300;
     }
   }
 

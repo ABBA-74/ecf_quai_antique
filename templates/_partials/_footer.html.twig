@@ -1,0 +1,84 @@
+<footer>
+	{% include "./_partials/_newsletter.html.twig" %}
+	<div class="footer-top bg-clr-light-gray">
+		<div class="foot-top__arrow-up-wrapper">
+			<a href="#">
+				<img src="{{asset('./build/images/arrow-up.svg')}}" alt="icone fleche haut">
+			</a>
+		</div>
+		<div class="row d-flex justify-content-center align-items-start text-light mx-1 mx-md-5 pt-4 pb-2">
+			<div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-start justify-content-sm-center align-items-start">
+				<div class="row mb-3">
+					<div class="col-12 col-sm-4">
+						<img class="footer-top__logo mb-2 mb-sm-0 me-4" src="{{ asset('./build/images/logo.svg')}}" alt="logo">
+					</div>
+					<div class="col-12 col-sm-8">
+						<div class="footer-top__logo-content">
+							<ul class="my-1">
+								<li class="footer-top__label h5 mb-3">QUAI ANTIQUE</li>
+								<li class="mb-2">2 rue de la Poste</li>
+								<li>73000 Chambery</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-start justify-content-sm-center align-items-start">
+				<div class="footer-top__contact-info mb-3">
+					<ul class="my-1">
+						<li class="footer-top__label h5 mb-3">NOUS CONTACTER</li>
+						<li class="mb-2">
+							<span class="me-2">
+								<img src="{{ asset('./build/images/phone.svg')}}" alt="icone telephone">
+							</span>
+							04 50 55 55 55
+						</li>
+						<li>
+							<span class="me-2">
+								<img src="{{ asset('./build/images/email.svg')}}" alt="icone email">
+							</span>
+							contat@quai-antique.fr
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-start justify-content-sm-center align-items-start">
+				<div class="footer-top__social-links mb-3">
+					<ul class="my-1">
+						<li class="footer-top__label h5 mb-3">REJOIGNEZ-NOUS</li>
+						<li>
+							<span class="footer-top__social-link-wrapper me-3">
+								<a class="footer-top__social-link" href="https://fr-fr.facebook.com/" target="_blank">
+									<img src="{{ asset('./build/images/facebook.svg')}}" alt="icone facebook">
+								</a>
+							</span>
+							<span class="footer-top__social-link-wrapper me-3">
+								<a class="footer-top__social-link" href="https://twitter.com/?lang=fr" target="_blank">
+									<img src="{{ asset('./build/images/tweeter.svg')}}" alt="icone tweeter">
+								</a>
+							</span>
+							<span class="footer-top__social-link-wrapper">
+								<a class="footer-top__social-link" href="https://www.instagram.com/" target="_blank">
+									<img src="{{ asset('./build/images/instagram.svg')}}" alt="icone instagram">
+								</a>
+							</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer-bottom bg-clr-dark-gray txt-clr-light d-flex flex-column justify-content-center text-center px-2 py-3">
+		<p class="mb-1 mb-sm-0">© Copyright 2023 - Quai Antique - ABBA-DEV</p>
+		<p>
+			<a class="footer-bottom__link" href="#">Mentions légales</a>
+			-
+			<a class="footer-bottom__link" href="#">
+				CGU</a>
+			-
+			<a class="footer-bottom__link" href="#">
+				Politique de confidentialité
+			</a>
+		</p>
+	</div>
+</footer>

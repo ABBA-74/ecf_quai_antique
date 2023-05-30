@@ -1,4 +1,7 @@
+@use './../base/colors' as clr;
+
 .section-newsletter {
+  border-top: solid 3px clr.$clr-light;
   h3 {
     line-height: 1.45;
   }

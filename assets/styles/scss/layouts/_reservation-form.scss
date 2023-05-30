@@ -5,27 +5,92 @@
   form {
     position: relative;
     z-index: 5;
-    background: clr.$clr-dark-gray;
+    background-color: clr.$clr-dark-gray;
+    background-image: linear-gradient(
+      25npm run watch5deg,
+      rgba(clr.$clr-light-gray, 1),
+      clr.$clr-dark-gray
+    );
     // box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     //   rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
     //   rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     box-shadow: rgba(0, 0, 0, 0.73) 0px 22px 70px 4px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.264);
     border-radius: 0.5rem;
     padding-inline: 2rem;
     padding-top: 3rem;
     padding-bottom: 2rem;
     .reservation-wrapper {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
       box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
         rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
         rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.074);
       padding-inline: 2rem;
       padding-block: 2rem;
       background-color: clr.$clr-light-gray;
+      background-color: clr.$clr-dark-gray;
+      background-image: linear-gradient(
+        180deg,
+        clr.$clr-light-gray,
+        clr.$clr-dark-gray
+      );
       border-radius: 0.5rem;
+
       label {
-        color: clr.$clr-light;
+        color: rgba(clr.$clr-light, 0.78);
         width: 100%;
         text-align: center;
+      }
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover,
+      input:-webkit-autofill:focus,
+      input:-webkit-autofill:active {
+        transition: background-color 600000s 0s, color 100000s 0s;
+      }
+      input[data-autocompleted] {
+        background-color: transparent !important;
+      }
+      input.form-control,
+      input.form-control:valid {
+        background-color: hsl(140, 4%, 18%) !important;
+        outline: none;
+        border: 1px solid hsl(140, 4%, 28%);
+        color: clr.$clr-light;
+      }
+
+      //////////
+      .form-control,
+      .form-control:focus,
+      .form-control:valid {
+        outline: none;
+        border: none;
+        background-color: #0c0c0c55;
+        color: #ffffff;
+        font-size: 1rem;
+      }
+      .form-control:focus {
+        border-color: #505050;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+          0 0 18px rgba(120, 120, 120, 0.6);
+      }
+      ///////////
+      ::placeholder {
+        /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: red;
+        opacity: 1; /* Firefox */
+      }
+
+      :-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: red;
+      }
+
+      ::-ms-input-placeholder {
+        /* Microsoft Edge */
+        color: red;
       }
     }
     button[type='submit'] {

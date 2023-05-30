@@ -1,0 +1,39 @@
+<section class="section-timetable py-5">
+	<div class="container">
+		<div class="row py-5">
+			<h2 class="text-center txt-clr-primary">Nos Horaires</h2>
+			<img class="img-separator mb-2" src="{{ asset('./build/images/separator.svg')}}" alt="illustration separator">
+		</div>
+		<div class="row d-flex justify-content-center pb-5">
+			<div class="timetable-content d-flex  flex-wrap">
+				<div class="col-12 col-lg-6 d-flex flex-column justify-content-center">
+					<img class="img-separator mt-3" src="{{ asset('./build/images/separator-timetable.png')}}" alt="illustration separator">
+					<h3 class="h4 text-center txt-clr-dark">
+						Prêts pour un festin savoyard ? Consultez nos horaires et préparez-vous à être comblés.
+					</h3>
+				</div>
+				<div class="col-12">
+					<table class="table">
+						<thead>
+							<tr>
+								<th scope="col"></th>
+								<th scope="col">Déjeuner</th>
+								<th scope="col">Diner</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% set defaultTimezone = 'Europe/Paris' %}
+							{% for i in 0..6 %}
+								<tr>
+									<th scope="row">Lundi</th>
+									<td>11h00 - 14h00</td>
+									<td>19h00 - 22h30</td>
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

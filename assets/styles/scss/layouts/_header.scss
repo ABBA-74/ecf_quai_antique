@@ -5,7 +5,7 @@ header {
   z-index: 1;
   height: 700px;
   background: clr.$clr-dark-gray url('../../../images/restaurant-room.webp')
-    no-repeat center top;
+    no-repeat center 90%;
   object-fit: cover;
   .header-wrapper {
     position: absolute;
@@ -33,8 +33,8 @@ header {
     }
     p {
       color: clr.$clr-light;
-      font-size: 1.15rem;
-      font-weight: 300;
+      // font-size: 1.15rem;
+      // font-weight: 300;
     }
   }
 
@@ -55,7 +55,7 @@ header {
         font-size: 5rem;
       }
       p {
-        font-size: 1.35rem;
+        // font-size: 1.35rem;
       }
     }
   }

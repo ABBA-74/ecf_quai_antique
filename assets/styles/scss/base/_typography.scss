@@ -1,5 +1,6 @@
 * {
   font-family: 'poppins', Geneva, Verdana, sans-serif;
+  font-weight: 300;
 }
 h1,
 h2 {
@@ -10,5 +11,11 @@ h1 {
   font-size: 5rem;
 }
 h2 {
-  font-size: 3.8rem;
+  font-size: 2.8rem;
+}
+
+@media screen and (min-width: 578px) {
+  h2 {
+    font-size: 3.8rem;
+  }
 }

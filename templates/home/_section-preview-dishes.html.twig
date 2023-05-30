@@ -1,0 +1,25 @@
+<section class="section-preview-dishes py-5">
+	<div class="container">
+		<div class="row py-5">
+			<h2 class="text-center txt-clr-primary">Les plats les plus savoureux de notre cuisinier</h2>
+			<img class="img-separator mb-2" src="{{ asset('./build/images/separator.svg')}}" alt="illustration separator">
+		</div>
+		<div class="row">
+			<div class="preview-dishes-grid d-flex  flex-wrap">
+				{% for i in 0..11 %}
+					<div class="col-12 col-sm-6 col-md-4 col-xl-3 preview-dishes-card ">
+						<div class="wrapper-img p-2 p-md-3">
+							<img class="img-fluid w-100" src="{{ asset('./build/images/dishes-sample.png')}}" alt="">
+						</div>
+						<p>Label</p>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+		<div class="row pb-5">
+			<div class="col d-flex justify-content-center">
+				<button class='btn btn-bg-primary'>Explorer la galerie</button>
+			</div>
+		</div>
+	</div>
+</section>

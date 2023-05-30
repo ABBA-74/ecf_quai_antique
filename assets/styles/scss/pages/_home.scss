@@ -139,9 +139,9 @@
 // SECTION PREVIEW DISHES
 
 .section-preview-dishes {
-  background: clr.$clr-dark-gray url('./../../../images/texture-dark.png') 100%
+  background: clr.$clr-light-gray url('./../../../images/texture-dark.png') 100%
     center no-repeat;
-  background-color: #212422;
+  background-size: cover;
   .preview-dishes-card img {
   }
 }
@@ -151,7 +151,7 @@
   padding-top: 3rem;
   background: clr.$clr-dark-gray url('./../../../images/texture-dark.png') 100%
     center no-repeat;
-  //   background-size: cover;
+  background-size: cover;
   color: clr.$clr-dark-gray;
 
   .timetable-content {

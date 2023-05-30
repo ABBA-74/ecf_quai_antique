@@ -1,6 +1,9 @@
 @use './colors' as clr;
 
-.bg-clr-dark {
+.bg-clr-light-gray {
+  background-color: clr.$clr-light-gray;
+}
+.bg-clr-dark-gray {
   background-color: clr.$clr-dark-gray;
 }
 .bg-clr-secondary {

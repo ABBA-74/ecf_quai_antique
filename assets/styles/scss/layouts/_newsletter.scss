@@ -1,0 +1,21 @@
+.section-newsletter {
+  h3 {
+    line-height: 1.45;
+  }
+  form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .input-group-text {
+      border: 1px solid hsl(140, 4%, 28%);
+      border-radius: 0;
+      border-top-left-radius: 0.375rem;
+      border-bottom-left-radius: 0.375rem;
+    }
+    input.form-control {
+      border-radius: 0;
+      border-top-right-radius: 0.375rem;
+      border-bottom-right-radius: 0.375rem;
+    }
+  }
+}

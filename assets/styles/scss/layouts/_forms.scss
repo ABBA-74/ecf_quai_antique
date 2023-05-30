@@ -1,0 +1,59 @@
+@use './../base/colors' as clr;
+form {
+  label {
+    color: rgba(clr.$clr-light, 0.78);
+    width: 100%;
+    text-align: center;
+  }
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    transition: background-color 600000s 0s, color 100000s 0s;
+  }
+  input[data-autocompleted] {
+    background-color: transparent !important;
+  }
+  input.form-control,
+  input.form-control:valid {
+    background-color: hsl(140, 4%, 18%) !important;
+    outline: none;
+    border: 1px solid hsl(140, 4%, 28%);
+    color: clr.$clr-light;
+  }
+
+  //////////
+  .form-control,
+  .form-control:focus,
+  .form-control:valid {
+    outline: none;
+    border: none;
+    background-color: #0c0c0c55;
+    color: #ffffff;
+    font-size: 1rem;
+  }
+  .form-control:focus {
+    border-color: #505050;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+      0 0 18px rgba(120, 120, 120, 0.6);
+  }
+  ///////////
+  //   ::placeholder {
+  //     /* Chrome, Firefox, Opera, Safari 10.1+ */
+  //     color: red;
+  //     opacity: 1; /* Firefox */
+  //   }
+
+  //   :-ms-input-placeholder {
+  //     /* Internet Explorer 10-11 */
+  //     color: red;
+  //   }
+
+  //   ::-ms-input-placeholder {
+  //     /* Microsoft Edge */
+  //     color: red;
+  //   }
+  //   button[type='submit'] {
+  //     margin-top: 1rem;
+  //   }
+}

@@ -2,29 +2,30 @@ img.img-separator {
   filter: drop-shadow(0 3px 3px rgb(0, 0, 0))
     drop-shadow(0 12px 6px rgb(0, 0, 0));
 }
-
-.section-timetable .timetable-content .img-separator {
-}
+.section-menu .menu-card .img-separator,
 .section-timetable .timetable-content .img-separator {
   opacity: 0.6;
-  transition: all 0.2s ease-out;
+  // transition: all 0.2s ease-out;
 }
-.section-timetable .timetable-content:hover .img-separator {
-  opacity: 0.41;
-  transition: all 0.2s ease-out;
-}
+// .section-menu .menu-card:hover .img-separator,
+// .section-timetable .timetable-content:hover .img-separator {
+//   opacity: 0.41;
+//   transition: all 0.2s ease-out;
+// }
+.section-menu .menu-card,
 .section-timetable .timetable-content {
   text-rendering: optimizeSpeed;
   //   -webkit-font-smoothing: subpixel-antialiased;
   -webkit-font-smoothing: antialiased;
-  transition: all 0.2s ease-out;
+  // transition: all 0.2s ease-out;
   filter: drop-shadow(rgb(0, 0, 0) 0px 12px 50px)
       drop-shadow(rgb(0, 0, 0) 0px 26px 40px),
     hue-rotate(0deg);
 }
-.section-timetable .timetable-content:hover {
-  opacity: 1;
-  transform: translateY(-0.34rem);
-  filter: drop-shadow(rgb(0, 0, 0, 0.174) 0px 12px 50px)
-    drop-shadow(rgba(0, 0, 0, 0.174) 0px 26px 40px);
-}
+// .section-menu .menu-card:hover,
+// .section-timetable .timetable-content:hover {
+//   opacity: 1;
+//   transform: translateY(-0.34rem);
+//   filter: drop-shadow(rgb(0, 0, 0, 0.174) 0px 12px 50px)
+//     drop-shadow(rgba(0, 0, 0, 0.174) 0px 26px 40px);
+// }

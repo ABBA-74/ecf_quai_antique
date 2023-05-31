@@ -3,6 +3,9 @@
 .footer-top {
   position: relative;
   border-top: 3px solid clr.$clr-primary;
+  li {
+    color: clr.$clr-light;
+  }
   .footer-top__logo {
     height: 110px;
     width: auto;

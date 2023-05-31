@@ -1,0 +1,54 @@
+@use './../base/colors' as clr;
+
+.section-menu {
+  position: relative;
+  padding-top: 3rem;
+  background: clr.$clr-dark-gray url('./../../../images/texture-dark.png') 100%
+    center no-repeat;
+  background-size: cover;
+  color: clr.$clr-dark-gray;
+
+  .menu-card {
+    background: url('./../../../images/timetable-bg.png') no-repeat;
+    filter: drop-shadow(rgb(0, 0, 0) 0px 22px 60px)
+      drop-shadow(rgb(0, 0, 0) 0px 46px 80px);
+    background-size: 100% 100%;
+    color: clr.$clr-dark-gray;
+    max-width: 820px;
+    height: auto;
+    .col-12 {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+    h3 {
+      position: relative;
+      max-width: 40ch;
+      padding-top: 0.6rem;
+      padding-bottom: 1rem;
+      margin-inline: auto;
+      text-align: center;
+      padding-inline: 2rem;
+      min-height: 5rem;
+    }
+    &__desc {
+      min-height: 4rem;
+    }
+    &__starter-dish,
+    &__main-course,
+    &__dessert {
+      min-height: 4rem;
+    }
+    @media screen and (min-width: 991px) {
+      &__desc {
+        min-height: 6rem;
+      }
+      &__starter-dish,
+      &__main-course,
+      &__dessert {
+        min-height: 5rem;
+      }
+    }
+  }
+}

@@ -10,16 +10,19 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav me-auto me-lg-0 ms-lg-auto mb-2 mb-lg-0">
 				<li class="nav-item">
-					<a class="nav-link active" aria-current="page" href="{{ path('app_home')}}">ACCUEIL</a>
+					<a class="nav-link {{ (route_name starts with 'app_home') ? 'active' : '' }}" aria-current="page" href="{{ path('app_home')}}">ACCUEIL</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="{{ path('app_menu') }}">MENU</a>
+					<a class="nav-link {{ (route_name starts with 'app_menu') ? 'active' : '' }}" href="{{ path('app_menu') }}">MENU</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">CARTES</a>
+					<a class="nav-link" href="#">CARTE</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#">GALERIE</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">CONTACT</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#">CONNEXION</a>

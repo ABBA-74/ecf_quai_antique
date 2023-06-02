@@ -19,47 +19,41 @@ class MenuFormulaFixtures extends Fixture implements DependentFixtureInterface
         $faker = Factory::create('fr_FR');
 
         $menuNames = [
-            'Menu du jour',
-            'Menu pour enfant',
-            'Menu gastronomique',
-            'Menu du terroir',
-            'Menu découverte',
-            'Menu végétarien'
+            [
+                'name' => 'Menu du Terroir',
+                'description' => 'Une expérience culinaire savoyarde ludique, délicieuse et adaptée aux enfants, pour les petits gourmets curieux.'
+            ],
+            [
+                'name' => 'Menu Festin des Cimes',
+                'description' => 'Envolez-vous vers de sommets gastronomiques, une expérience culinaire d\'exception inspirée par les trésors de la Savoie.'
+            ],
+            [
+                'name' => 'Menu Délices du Chef',
+                'description' => 'Découvrez notre Menu Délices du Chef, une expérience culinaire savoyarde enchantée, avec des créations exquises et raffinées.'
+            ]
         ];
         $formulaNames = [
             [
-                'name' => 'Formule gourmande',
-                'description' => 'entrée + plat + dessert'
-            ],
-            [
                 'name' => 'Formule express',
-                'description' => 'plat + dessert + café'
-            ],
-            [
-                'name' => 'Formule équilibrée',
-                'description' => 'entrée + plat + boisson'
-            ],
-            [
-                'name' => 'Formule traditionnelle',
-                'description' => 'plat + fromage + dessert'
+                'description' => 'Plat + Dessert + Café'
             ],
             [
                 'name' => 'Formule légère',
-                'description' => 'entrée + salade composée'
+                'description' => 'Entrée + Salade composée'
             ],
             [
-                'name' => 'Formule rapide',
-                'description' => 'soupe + sandwich + boisson'
-            ]
+                'name' => 'Formule équilibrée',
+                'description' => 'Entrée + Plat + Boisson'
+            ],
         ];
 
-        for ($i = 0; $i < 12 ; $i++) { 
+        for ($i = 0; $i < 6 ; $i++) { 
             $menuFormula = new MenuFormula();
 
             // menu
-            if ($i < 6) {
-                $menuFormula->setName($menuNames[$i])
-                    ->setDescription($faker->unique()->sentence(6))
+            if ($i < 3) {
+                $menuFormula->setName($menuNames[$i]['name'])
+                    ->setDescription($menuNames[$i]['description'])
                     ->setPrice($faker->randomFloat(1,30,50))
                     ->setSlug($this->sluggerInterface->slug($menuFormula->getName())->lower())
                     ->setIsMenu(true)
@@ -68,8 +62,8 @@ class MenuFormulaFixtures extends Fixture implements DependentFixtureInterface
                     ->addProduct($this->getReference('dessert_'.$faker->numberBetween(0, 6)));
             } else {
             // formula
-                $menuFormula->setName($formulaNames[$i - 6]['name'])
-                    ->setDescription($formulaNames[$i - 6]['description'])
+                $menuFormula->setName($formulaNames[$i - 3]['name'])
+                    ->setDescription($formulaNames[$i - 3]['description'])
                     ->setPrice($faker->randomFloat(1,20,30))
                     ->setSlug($this->sluggerInterface->slug($menuFormula->getName())->lower())
                     ->setIsMenu(false);

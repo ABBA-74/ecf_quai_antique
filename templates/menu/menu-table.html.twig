@@ -1,0 +1,23 @@
+<div class="col-12 col-lg-6 col-xl-4 mb-5">
+	<div class="menu-card d-flex flex-wrap px-4 pb-5">
+		<div class="col-12 col-lg-6 d-flex flex-column justify-content-center">
+			<img class="img-separator mt-3" src="{{ asset('./build/images/separator-timetable.png')}}" alt="illustration separator">
+			<h3 class="h4 text-center txt-clr-dark">
+				{{ menu.name }}
+			</h3>
+		</div>
+		<div class="col-12">
+			<p class="menu-card__desc mb-3">{{ menu.description }}</p>
+			<h4 class="h5 mb-3">Entrée</h4>
+			<p class="menu-card__starter-dish mb-3">{{ menu.product[0].name }}</p>
+			<h4 class="h5 mb-3">Plat principal</h4>
+			<p class="menu-card__main-course mb-3">{{ menu.product[1].name }}</p>
+			<h4 class="h5 mb-3">Dessert</h4>
+			<p class="menu-card__dessert mb-3">{{ menu.product[2].name }}</p>
+			<h4 class="h5 mb-3">Prix
+			</h4>
+			<span>{{ menu.price|number_format(2, ',', '.') }}
+				€</span>
+		</div>
+	</div>
+</div>

@@ -8,21 +8,14 @@
 {% block body %}
 	{% include "./_partials/_header.html.twig" with {'title':'Plaisirs Culinaires', 'content': 'Découvrez notre carte savoyarde avec ses entrées, plats principaux, desserts. Laissez-vous envoûter par les saveurs uniques de la cuisine traditionnelle savoyarde et vivez une expérience culinaire inoubliable dans notre restaurant.'} %}
 	<main>
-		{# <pre>
-																	{{ dump(productsByCategory) }}
-																	{{ dump(productsByCategory['dessert']) }}
-																	{{ dump(productsByCategory['dessert'][0]['name']) }}
-																	</pre> #}
 		<section class="section-carte py-5">
 			<div class="container">
 				<div class="row py-5">
 					<h2 class="text-center txt-clr-primary">Specialites Culinaires</h2>
 					<img class="img-separator mb-2" src="{{ asset('./build/images/separator.svg')}}" alt="illustration separator">
 				</div>
-				<div class="row pb-3">
-					<div class="img-carte-wrapper">
-						<img class="img-carte-lg" src="{{ asset('./build/images/fondue-lg.png')}}" alt="image fondue">
-					</div>
+				<div class="row pb-3 mx-0">
+					<div class="img-carte-dishes-wrapper"></div>
 				</div>
 				<div class="row d-flex justify-content-center pb-5">
 					{% set starters = productsByCategory['entrée']|merge(productsByCategory['soupe'])%}
@@ -37,10 +30,8 @@
 					<h2 class="text-center txt-clr-primary">Carte des boissons</h2>
 					<img class="img-separator mb-2" src="{{ asset('./build/images/separator.svg')}}" alt="illustration separator">
 				</div>
-				<div class="row pb-3">
-					<div class="img-carte-wrapper">
-						<img class="img-carte-lg" src="{{ asset('./build/images/bar.png')}}" alt="image du bar du restaurant">
-					</div>
+				<div class="row pb-3 mx-0">
+					<div class="img-carte-drink-wrapper"></div>
 				</div>
 				<div class="row d-flex justify-content-center pb-5">
 

@@ -10,77 +10,17 @@
 	<main>
 		<section class="section-menu py-5">
 			<div class="container">
-				<div class="row py-5">
+				<div class="row my-5">
 					<h2 class="text-center txt-clr-primary">Une symphonie de saveurs dans nos menus</h2>
 					<img class="img-separator mb-2" src="{{ asset('./build/images/separator.svg')}}" alt="illustration separator">
 				</div>
-				<div class="row d-flex justify-content-center pb-5">
-					<div class="col-12 col-lg-6 col-xl-4 mb-5">
-						<div class="menu-card d-flex flex-wrap px-4 pb-5">
-							<div class="col-12 col-lg-6 d-flex flex-column justify-content-center">
-								<img class="img-separator mt-3" src="{{ asset('./build/images/separator-timetable.png')}}" alt="illustration separator">
-								<h3 class="h4 text-center txt-clr-dark">
-									Menu Enfant
-								</h3>
-							</div>
-							<div class="col-12">
-								<p class="menu-card__desc mb-3">Une expérience culinaire savoyarde ludique, délicieuse et adaptée aux enfants, pour les petits gourmets curieux.</p>
-								<h4 class="h5 mb-3">Entrée</h4>
-								<p class="menu-card__starter-dish mb-3">Salade Gourmande aux Crozets (mélange de crozets savoyards et de légumes frais)</p>
-								<h4 class="h5 mb-3">Plat principal</h4>
-								<p class="menu-card__main-course mb-3">Tartiflette Junior (pommes de terre, lardons et reblochon fondant)</p>
-								<h4 class="h5 mb-3">Dessert</h4>
-								<p class="menu-card__dessert mb-3">Coupe Gourmande (glaces artisanales et fruits frais)</p>
-								<h4 class="h5 mb-3">Prix
-								</h4>
-								<span>28.00€</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-12 col-lg-6 col-xl-4 mb-5">
-						<div class="menu-card d-flex flex-wrap px-4 pb-5">
-							<div class="col-12 col-lg-6 d-flex flex-column justify-content-center">
-								<img class="img-separator mt-3" src="{{ asset('./build/images/separator-timetable.png')}}" alt="illustration separator">
-								<h3 class="h4 text-center txt-clr-dark">
-									Menu Festin des Cimes
-								</h3>
-							</div>
-							<div class="col-12">
-								<p class="menu-card__desc mb-3">Envolez-vous vers de sommets gastronomiques avec notre Menu Festin des Cimes, une expérience culinaire d'exception inspirée par les trésors de la Savoie.</p>
-								<h4 class="h5 mb-3">Entrée</h4>
-								<p class="menu-card__starter-dish mb-3">Escalope de Foie Gras poêlée, accompagnée d'une Confiture d'Oignons Caramélisés</p>
-								<h4 class="h5 mb-3">Plat principal</h4>
-								<p class="menu-card__main-course mb-3">Côte de Bœuf Grillée, servie avec une Gratinée de Crozets et une Sauce aux Morilles</p>
-								<h4 class="h5 mb-3">Dessert</h4>
-								<p class="menu-card__dessert mb-3">Nougat Glacé aux Éclats de Noisettes, accompagné d'un Coulis de Fruits Rouges</p>
-								<h4 class="h5 mb-3">Prix
-								</h4>
-								<span>34.00€</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-12 col-lg-6 col-xl-4 mb-5">
-						<div class="menu-card d-flex flex-wrap px-4 pb-5">
-							<div class="col-12 col-lg-6 d-flex flex-column justify-content-center">
-								<img class="img-separator mt-3" src="{{ asset('./build/images/separator-timetable.png')}}" alt="illustration separator">
-								<h3 class="h4 text-center txt-clr-dark">
-									Menu Délices du Chef
-								</h3>
-							</div>
-							<div class="col-12">
-								<p class="menu-card__desc mb-3">Découvrez notre Menu Délices du Chef, une expérience culinaire savoyarde enchantée, avec des créations exquises et raffinées.</p>
-								<h4 class="h5 mb-3">Entrée</h4>
-								<p class="menu-card__starter-dish mb-3">Foie Gras Poêlé sur un Lit de Chutney de Fruits de Saison, accompagné de Toasts Dorés</p>
-								<h4 class="h5 mb-3">Plat principal</h4>
-								<p class="menu-card__main-course mb-3">Filet de Perche Meunière, accompagné d'une Purée de Patates Douces et de Légumes Croquants</p>
-								<h4 class="h5 mb-3">Dessert</h4>
-								<p class="menu-card__dessert mb-3">Mille-feuille aux Myrtilles, agrémenté d'une Crème Légère à la Vanille</p>
-								<h4 class="h5 mb-3">Prix
-								</h4>
-								<span>42.00€</span>
-							</div>
-						</div>
-					</div>
+				<div class="row pb-3 mx-0">
+					<div class="img-menu-wrapper"></div>
+				</div>
+				<div class="row d-flex justify-content-center mb-5">
+					{% for menu in menus %}
+						{% include "./menu/menu-table.html.twig" with {'menu': menu} %}
+					{% endfor %}
 				</div>
 				<div class="row py-5">
 					<div class="col-12 mb-3">
@@ -89,8 +29,28 @@
 					<div class="col-12 col-lg-8 mx-auto mb-4">
 						<p class='txt-clr-light text-start text-md-center'>Nous proposons des menus sur mesure pour vos événements spéciaux. Que ce soit un dîner d'affaires, une fête de famille ou une célébration spéciale, nous sommes là pour répondre à vos attentes culinaires. Veuillez nous contacter pour discuter de vos besoins et permettez-nous de créer un menu sur mesure qui fera de votre événement une expérience inoubliable.</p>
 					</div>
-					<div class="col-12 d-flex justify-content-center">
+					<div class="col-12 d-flex justify-content-center my-3">
 						<a href="#" type="button" class="btn btn-bg-primary">CONTACT</a>
+					</div>
+				</div>
+				<div class="row py-5">
+					<h2 class="text-center txt-clr-primary">Nos Formules Gourmandes</h2>
+					<img class="img-separator mb-2" src="{{ asset('./build/images/separator.svg')}}" alt="illustration separator">
+				</div>
+				<div class="row pb-3 mx-0">
+					<div class="img-formula-wrapper"></div>
+				</div>
+				<div class="row d-flex justify-content-center pb-5">
+					{% for formule in formules %}
+						{% include "./menu/formula-table.html.twig" with {'formule': formule} %}
+					{% endfor %}
+				</div>
+				<div class="row py-5">
+					<div class="col-12 mb-3">
+						<h3 class="h4 text-center txt-clr-primary">Formules gastronomiques en constantes évolutions</h3>
+					</div>
+					<div class="col-12 col-lg-8 mx-auto mb-4">
+						<p class='txt-clr-light text-start text-md-center'>Notre restaurant propose des formules avec des choix d'entrées, salades, plats et desserts qui changent régulièrement. Nos chefs créatifs explorent de nouvelles combinaisons de saveurs et privilégient les produits de saison. Venez découvrir nos formules qui reflètent les dernières inspirations culinaires pour une expérience gastronomique toujours renouvelée.</p>
 					</div>
 				</div>
 			</div>

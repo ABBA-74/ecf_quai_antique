@@ -7,7 +7,22 @@
     center no-repeat;
   background-size: cover;
   color: clr.$clr-dark-gray;
-
+  .img-menu-wrapper {
+    background: url('../../../images/plats-2.jpg') no-repeat fixed;
+  }
+  .img-formula-wrapper {
+    background: url('../../../images/plats-3.jpg') no-repeat fixed;
+  }
+  .img-menu-wrapper,
+  .img-formula-wrapper {
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 50% 100%;
+    height: 24rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    border-bottom: 2px solid rgba(189, 174, 119, 0.86);
+  }
   .menu-card {
     background: url('./../../../images/timetable-bg.png') no-repeat;
     filter: drop-shadow(rgb(0, 0, 0) 0px 22px 60px)
@@ -32,22 +47,18 @@
       padding-inline: 2rem;
       min-height: 5rem;
     }
+
     &__desc {
-      min-height: 4rem;
+      min-height: 2rem;
     }
     &__starter-dish,
     &__main-course,
     &__dessert {
-      min-height: 4rem;
+      min-height: 2rem;
     }
     @media screen and (min-width: 991px) {
       &__desc {
         min-height: 6rem;
-      }
-      &__starter-dish,
-      &__main-course,
-      &__dessert {
-        min-height: 5rem;
       }
     }
   }

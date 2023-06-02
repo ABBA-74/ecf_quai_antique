@@ -14,7 +14,7 @@ class CategoryFixtures extends Fixture
 
     public function load(ObjectManager $manager): void
     {
-        $categoryNames = ['entrée', 'soupe','plat', 'salade composée', 'sandwitch','fromage', 'boisson','dessert', 'café'];
+        $categoryNames = ['entrée', 'soupe', 'plat', 'salade composée', 'sandwitch', 'fromage', 'boisson', 'dessert', 'café', 'apéritifs', 'vins', 'digestifs'];
         
         for ($i = 0; $i < count($categoryNames); $i++) { 
             $category = new Category();

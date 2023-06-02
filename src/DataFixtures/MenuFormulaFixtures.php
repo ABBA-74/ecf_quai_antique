@@ -63,9 +63,9 @@ class MenuFormulaFixtures extends Fixture implements DependentFixtureInterface
                     ->setPrice($faker->randomFloat(1,30,50))
                     ->setSlug($this->sluggerInterface->slug($menuFormula->getName())->lower())
                     ->setIsMenu(true)
+                    ->addProduct($this->getReference('starter_'.$faker->numberBetween(0, 4)))
                     ->addProduct($this->getReference('mainCourse_'.$faker->numberBetween(0, 10)))
-                    ->addProduct($this->getReference('dessert_'.$faker->numberBetween(0, 6)))
-                    ->addProduct($this->getReference('starter_'.$faker->numberBetween(0, 4)));
+                    ->addProduct($this->getReference('dessert_'.$faker->numberBetween(0, 6)));
             } else {
             // formula
                 $menuFormula->setName($formulaNames[$i - 6]['name'])

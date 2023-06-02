@@ -1,0 +1,29 @@
+<div class="col-12 col-lg-6 col-xl-4 mb-5">
+	<div class="carte-card d-flex flex-wrap px-4 pb-5">
+		<div class="col-12 col-lg-6 d-flex flex-column justify-content-center">
+			<img class="img-separator mt-3" src="{{ asset('./build/images/separator-timetable.png')}}" alt="illustration separator">
+			<h3 class="h4 text-center txt-clr-dark">
+				{{ title }}
+			</h3>
+		</div>
+		<div class="col-12">
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col"></th>
+						<th scope="col">Prix</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for item in items %}
+						<tr>
+							<th scope="row">{{ item['name'] }}</th>
+							<th class="w-25" scope="row">{{ item['price']|number_format(2, ',', '.') }}
+								€</th>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

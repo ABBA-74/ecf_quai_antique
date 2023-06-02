@@ -13,10 +13,10 @@
 					<a class="nav-link {{ (route_name starts with 'app_home') ? 'active' : '' }}" aria-current="page" href="{{ path('app_home')}}">ACCUEIL</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link {{ (route_name starts with 'app_menu') ? 'active' : '' }}" href="{{ path('app_menu') }}">MENU</a>
+					<a class="nav-link {{ (route_name starts with 'app_menu') ? 'active' : '' }}" aria-current="page" href="{{ path('app_menu') }}">MENU</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">CARTE</a>
+					<a class="nav-link {{ (route_name starts with 'app_carte') ? 'active' : '' }}" aria-current="page" href="{{ path('app_carte')}}">CARTE</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#">GALERIE</a>
